@@ -1,5 +1,35 @@
 <?php
 
+    function createAccount($username,$email,$password){
+        require "libs/baglanti.php";
+        $QUERY = "INSERT INTO hesaplar(username,email,password) VALUES (?,?,?)";
+        $stmt= mysqli_prepare($baglanti,$QUERY);
+        $hashed_password = password_hash($password,PASSWORD_DEFAULT);
+        mysqli_stmt_bind_param($stmt,"sss",$username,$email,$hashed_password);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+        mysqli_close($baglanti);
+    }
+
+    function isUsing($bilgi,$tur){
+        require "libs/baglanti.php";
+        if ($bilgi == "email")
+            $QUERY = "SELECT * FROM hesaplar WHERE email=?";
+        else
+            $QUERY = "SELECT * FROM hesaplar WHERE username=?";
+        $stmt = mysqli_prepare($baglanti,$QUERY);
+        mysqli_stmt_bind_param($stmt,"s",$tur);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $count = mysqli_num_rows($result);
+        mysqli_stmt_close($stmt);
+        mysqli_close($baglanti);
+        if ($count>0)
+            return true;
+        else
+            return false;
+    }
+
     function isPasswordCorrect($username,$password){
         require "libs/baglanti.php";
         $query = "SELECT * FROM hesaplar WHERE username=?";
