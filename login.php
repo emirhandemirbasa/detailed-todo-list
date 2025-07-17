@@ -6,6 +6,7 @@ $username = $password = "";
 $usernameErr = $passwordErr = "";
 $usernameCorrect = false;
 $passwordCorrect = false;
+$butonDurum = "";
 if (isset($_POST["girisYap"]) && $_POST["girisYap"] == "Giriş Yap") {
     if (!empty($_POST["username"])) {
         $username = safe_html($_POST["username"]);
@@ -37,6 +38,7 @@ if (isset($_POST["girisYap"]) && $_POST["girisYap"] == "Giriş Yap") {
         $_SESSION["username"] = $username;
         $_SESSION["message"] = "Başarıyla hesabınıza giriş yaptınız! Ana sayfaya yönlendiriliyorsunuz...";
         $_SESSION["type"] = "success";
+        $butonDurum = "disabled";
     }
 }
 ?>
@@ -56,11 +58,7 @@ if (isset($_POST["girisYap"]) && $_POST["girisYap"] == "Giriş Yap") {
         </div>
         <div class="card-body p-4">
             <?php
-            if (isset($_SESSION["message"])) {
-                echo "<div class='alert alert-" . $_SESSION["type"] . "' role='alert'>" . $_SESSION["message"] . "</div>";
-                unset($_SESSION["message"]);
-                unset($_SESSION["type"]);
-            }
+                require "partials/_message.php";
             ?>
             <form method="POST">
                 <div class="mb-3">
@@ -74,7 +72,7 @@ if (isset($_POST["girisYap"]) && $_POST["girisYap"] == "Giriş Yap") {
                     <div class="text-danger"><?php echo $passwordErr; ?></div>
                 </div>
                 <div class="d-grid">
-                    <input type="submit" class="btn btn-success" name="girisYap" value="Giriş Yap">
+                    <input type="submit" class="btn btn-success" name="girisYap" value="Giriş Yap" <?php echo $butonDurum;?>>
                 </div>
                 <?php
                     if ($passwordCorrect == true && $usernameCorrect == true) {
