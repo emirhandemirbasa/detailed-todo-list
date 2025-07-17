@@ -6,6 +6,7 @@
     $emailCorrect=false;
     $butonDurum = "";
     $created=false;
+    $passwordKontrol=false;
 
     if (isset($_POST["kayitOl"]) && $_POST["kayitOl"] == "Kayıt Ol"){
         if (!empty($_POST["username"])){
@@ -37,6 +38,13 @@
         }
         if (!empty($_POST["password"])){
             $password = $_POST["password"];
+            if (strlen($password)>=8 && strlen($password)<=32){
+                $passwordKontrol = true;
+            }
+            else{
+                $_SESSION["message"] = "Şifreniz 8 ile 32 karakterden oluşmalıdır!";
+                $_SESSION["type"] = "danger";
+            }
         }else{
             $passwordErr = "Lütfen şifre kısmını boş bırakmayın!";
         }
@@ -47,7 +55,7 @@
         }
         if (empty($passwordErr) && empty($repassErr)){
             if ($password==$repassword){
-                if ($usernameCorrect == true && $emailCorrect==true){
+                if ($usernameCorrect == true && $emailCorrect==true && $passwordKontrol==true){
                     $_SESSION["message"] = "Hesabınız başarıyla oluşturuldu! Giriş arayüzüne yönlendiriliyorsunuz...";
                     $_SESSION["type"] = "success";
                     $butonDurum = "disabled";
@@ -103,7 +111,7 @@
                     <input type="submit" name="kayitOl" value="Kayıt Ol" class="btn btn-danger" <?php echo $butonDurum;?>>
                 </div>
                 <?php
-                    if (empty($passwordErr) && empty($repassErr) && $usernameCorrect == true &&  $emailCorrect==true && $created==true){
+                    if (empty($passwordErr) && empty($repassErr) && $usernameCorrect == true &&  $emailCorrect==true && $passwordKontrol==true && $created==true){
                         header("Refresh: 3; url=login.php");
                         exit;
                     }
