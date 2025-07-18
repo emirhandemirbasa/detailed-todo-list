@@ -9,3 +9,6 @@ Bu proje sisteme kayıt olup giriş yapan kullanıcıların günlük, haftalık 
 
 # Proje kurulumu
 -- Eklenecek
+
+## Lisans
+Bu proje MIT lisansı ile lisanslanmıştır – detaylar için LICENSE dosyasına bakın.
