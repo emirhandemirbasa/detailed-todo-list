@@ -36,6 +36,7 @@ if (isset($_POST["girisYap"]) && $_POST["girisYap"] == "Giriş Yap") {
     }
     if ($passwordCorrect == true && $usernameCorrect == true) {
         $_SESSION["username"] = $username;
+        $_SESSION["accountID"] = getAccountId($username);
         $_SESSION["message"] = "Başarıyla hesabınıza giriş yaptınız! Ana sayfaya yönlendiriliyorsunuz...";
         $_SESSION["type"] = "success";
         $butonDurum = "disabled";
