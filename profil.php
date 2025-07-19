@@ -52,13 +52,13 @@ if (isset($_POST["guncelle"]) && $_POST["guncelle"] == "Bilgileri Güncelle") {
         $soyisimErr = "Lütfen soyisim alanını boş bırakmayın!";
     }
 
-
-    if ($_POST["cinsiyet"] == 1 || $_POST["cinsiyet"] == 2) {
-        $cinsiyet = $_POST["cinsiyet"];
+    if (!empty($_POST["cinsiyet"])){
+        if ($_POST["cinsiyet"] == 1 || $_POST["cinsiyet"] == 2) {
+            $cinsiyet = $_POST["cinsiyet"];
+        }
     } else {
         $cinsiyetErr = "Lütfen bir cinsiyet seçin!";
     }
-    
     if (isset($_FILES["profilFoto"]) && $_FILES["profilFoto"]["size"] != 0) {
     $dosya = $_FILES["profilFoto"];
     $dosyaAdi = $dosya["name"];
