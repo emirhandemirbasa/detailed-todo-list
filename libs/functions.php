@@ -32,29 +32,34 @@ if (realpath($_SERVER["SCRIPT_FILENAME"]) === realpath(__FILE__))
             return false;
     }
 
-    function updateProfil($hesapID,$isim,$soyisim,$resim_url,$cinsiyetID){
-        require "libs/baglanti.php";
-        $query = "SELECT * FROM hesap_detay WHERE hesap_id=?";
-        $stmt = mysqli_prepare($baglanti,$query);
-        mysqli_stmt_bind_param($stmt,"i",$hesapID);
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-        $count = mysqli_num_rows($result);
-        mysqli_stmt_close($stmt);
-        if ($count>0){ //kayit var güncelle.
-            $query = "UPDATE hesap_detay SET isim=?,soyisim=?,profil_url=?,cinsiyet=? WHERE hesap_id=?";
-            $mesaj = "Profil bilgileriniz güncellendi!";
-        }else{ //kayit yok oluştur.
-            $query = "INSERT INTO hesap_detay(isim,soyisim,profil_url,cinsiyet,hesap_id) VALUES (?,?,?,?,?)";
-            $mesaj = "Profil bilgileriniz oluşturuldu!";
-        }
-        $stmt = mysqli_prepare($baglanti,$query);
-        mysqli_stmt_bind_param($stmt,"sssii",$isim,$soyisim,$resim_url,$cinsiyetID,$hesapID);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
-        mysqli_close($baglanti);
-        return $mesaj;
+function updateProfil($hesapID, $isim, $soyisim, $resim_url, $cinsiyetID) {
+    require "libs/baglanti.php";
+
+    $query = "SELECT 1 FROM hesap_detay WHERE hesap_id = ?";
+    $stmt = mysqli_prepare($baglanti, $query);
+    mysqli_stmt_bind_param($stmt, "i", $hesapID);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_store_result($stmt);
+    $count = mysqli_stmt_num_rows($stmt);
+    mysqli_stmt_close($stmt);
+
+    if ($count > 0) {
+        $query = "UPDATE hesap_detay SET isim = ?, soyisim = ?, profil_url = ?, cinsiyet = ? WHERE hesap_id = ?";
+        $mesaj = "Profil bilgileriniz güncellendi!";
+    } else {
+        $query = "INSERT INTO hesap_detay (isim, soyisim, profil_url, cinsiyet, hesap_id) VALUES (?, ?, ?, ?, ?)";
+        $mesaj = "Profil bilgileriniz oluşturuldu!";
     }
+
+    $stmt = mysqli_prepare($baglanti, $query);
+    mysqli_stmt_bind_param($stmt, "sssii", $isim, $soyisim, $resim_url, $cinsiyetID, $hesapID);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    mysqli_close($baglanti);
+
+    return $mesaj;
+}
+
 
     function getGenderById($genderID){
         require "libs/baglanti.php";
@@ -228,11 +233,11 @@ if (realpath($_SERVER["SCRIPT_FILENAME"]) === realpath(__FILE__))
         }
     }
 
-    function accountControl($username){
+    function accountControl($usernameOREmail){
         require "libs/baglanti.php";
         $query = "SELECT  * FROM hesaplar WHERE username=? OR email=?";
         $stmt = mysqli_prepare($baglanti,$query);
-        mysqli_stmt_bind_param($stmt,"ss",$username,$username);
+        mysqli_stmt_bind_param($stmt,"ss",$usernameOREmail,$usernameOREmail);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
         $count = mysqli_num_rows($result);
