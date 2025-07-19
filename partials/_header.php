@@ -1,3 +1,7 @@
+<?php 
+if (realpath($_SERVER["SCRIPT_FILENAME"]) === realpath(__FILE__))
+    include "../config/config.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
