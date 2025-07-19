@@ -12,7 +12,8 @@ Bu proje sisteme kayıt olup giriş yapan kullanıcıların günlük, haftalık 
 
 # Not Oluşturma Sistemi
 ✅Sidebar da bulunan Not oluştur kısmına veya Notlarım kısmına gidip sol alt köşe deki + butonuna tıklayıp Not oluşturma Açılır Penceresini(Modal) çağırabilirsiniz. Çağırdığınız zaman karşınızda Not başlığı, Not içeriği ve Not arkaplan rengini seçebileceğiniz bir arayüz karşılamaktadır. Bu arayüz içerisinde sizi engelleyecek tek koşul Not başlığınız 20 karakterden fazla olmamalıdır. Not oluştur butonuna tıkladığınızda sizi notlar.php sayfasına gönderecektir ve notlarınız listelenecektir.
-❗️❗️❗️❗️❗️NOT: NOT BAŞLIK VE NOT İÇERİK BİLGİLERİNİZ VERİ TABANINDA AES-128-CBC OLARAK ŞİFRELENMEKTEDİR!
+#UYARI
+❗️❗️❗️❗️❗️#NOT: NOT BAŞLIK VE NOT İÇERİK BİLGİLERİNİZ VERİ TABANINDA AES-128-CBC OLARAK ŞİFRELENMEKTEDİR!
 
 # Not Okuma Sistemi
 ✅notlar.php sayfasında veya sidebar da bulunan Notlarım kısmına tıklayıp notlarınızı görüntülüyorsunuz. Görüntüledikten sonra herhangi bir notun üzerine tıklayıp notu okuyabilirsiniz. Bu arayüzde Notunuzu Düzenleme ve Silme gibi işlevleri olan seçenekler bulunmaktadır.
