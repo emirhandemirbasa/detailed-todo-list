@@ -29,6 +29,12 @@ Bu proje sisteme kayıt olup giriş yapan kullanıcıların günlük, haftalık 
 # Çıkış Yapma Sistemi
 ✅sidebarda bulunan Çıkış seçeneğini seçerek karşınıza çıkan Açılır pencere(modal) yapısı ile hesabınızdan çıkış yapabilirsiniz.
 
+# Proje Detaylı tanıtım videosu:
+https://youtu.be/Ng8dfjEEvQI
+
+# Veri tabanı yapısının tanıtıldığı video:
+https://youtu.be/49UJaE-vbHM
+
 
 # Proje kurulumu
 -- Eklenecek
