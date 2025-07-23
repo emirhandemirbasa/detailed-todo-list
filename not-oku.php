@@ -35,7 +35,7 @@
                 <div class="card-header p-3 mt-2">
                     <h2 class="text-center mb-3"><?php echo veriCoz($baslik); ?></h2>
                 </div>
-                <div class="card-body" style="height:300px;">
+                <div class="card-body">
                     <p class="text-muted"><?php echo nl2br(veriCoz($detay)); ?></p>
                 </div>
                 <div class="card-footer">
