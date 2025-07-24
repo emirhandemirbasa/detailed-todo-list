@@ -35,6 +35,13 @@ https://youtu.be/Ng8dfjEEvQI
 # Veri tabanı yapısının tanıtıldığı video:
 https://youtu.be/49UJaE-vbHM
 
+# Güncellemeler
+23/07/2025
+ℹ️Not okuma arayüzündeki yükseklik sınırı kaldırıldı.
+
+24/07/2025
+ℹ️Arayüzlerin daha hoş ve estetik durması amacıyla animate.css kütüphanesi projeye dahil edildi ve arayüzler üzerinde uygulandı.
+
 
 # Proje kurulumu
 -- Eklenecek
