@@ -41,7 +41,7 @@
 <?php include "partials/_sidebar.php" ?>
 <div id="main-content" class="p-4">
     <div class="container mt-5">
-        <h1 class="text-center text-white mb-4 fw-bold">NOT LİSTEM</h1>
+        <h1 class="text-center text-white mb-4 fw-bold animate__animated animate__slideInDown">NOT LİSTEM</h1>
         <?php include "partials/_message.php" ?>
         <div class="row justify-content-center">
             <?php if(getNoteCountById($_SESSION["accountID"])>0):?>
@@ -49,7 +49,7 @@
             $notlar = getNotesById($_SESSION["accountID"]);
             while ($not = mysqli_fetch_assoc($notlar)): ?>
 
-                <div class="col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center mb-4 mt-5">
+                <div class="col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center mb-4 mt-5 animate__animated animate__slideInDown">
                     <a href="not-oku.php?notID=<?php echo $not["id"]; ?>" class="text-decoration-none w-100" style="max-width: 300px;">
                         <div class="card shadow-lg h-100" style="background-color: <?php echo $not["not_renk"]; ?>">
                             <div class="card-title text-center fs-5 fw-bold mt-3">
