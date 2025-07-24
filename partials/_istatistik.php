@@ -50,12 +50,12 @@ else
     <div class="row justify-content-center g-4">
         <?php include "partials/_message.php"; ?>
 
-        <div class="col-12 text-center mb-3">
+        <div class="col-12 text-center mb-3 animate__animated animate__slideInDown">
             <h2 class="text-white">Merhaba, <span class="text-secondary"><?php echo htmlspecialchars($_SESSION["username"]); ?></span> Hoşgeldin!</h2>
             <h5 class="text-white-50">Aşağıda uygulama içerisinde yaptığın istatistikler yer almaktadır.</h5>
         </div>
 
-        <div class="col-12 col-md-6" style="max-width: 520px;">
+        <div class="col-12 col-md-6 animate__animated animate__slideInLeft" style="max-width: 520px;">
             <div class="card shadow-lg rounded">
                 <div class="card-header fw-bold text-muted bg-light">Oluşturulan Not Durumu</div>
                 <div class="card-body text-center">
@@ -66,7 +66,7 @@ else
                 </div>
             </div>
 
-            <div class="card mt-4 shadow rounded">
+            <div class="card mt-4 shadow rounded animate__animated animate__slideInLeft">
                 <div class="card-header fw-bold bg-white">
                     <div class="row g-0 text-center">
                         <div class="col-4 border-end">
@@ -86,7 +86,7 @@ else
             </div>
         </div>
 
-        <div class="col-12 col-md-6" style="max-width: 520px;">
+        <div class="col-12 col-md-6 animate__animated animate__slideInRight" style="max-width: 520px;">
             <a href="<?php echo $link; ?>" class="text-decoration-none text-reset">
                 <div class="card shadow rounded h-100 hover-shadow" style="cursor:pointer;">
                     <div class="card-header fw-bold text-muted bg-white">Oluşturulan Son Not</div>
@@ -111,7 +111,7 @@ else
             </a>
         </div>
 
-        <div class="col-12 col-md-6" style="max-width: 520px;">
+        <div class="col-12 col-md-6 animate__animated animate__slideInUp" style="max-width: 520px;">
             <div class="card shadow-sm text-center rounded">
                 <div class="card-header bg-dark text-white fw-bold">Profil Bilgilerin</div>
                 <div class="card-body">

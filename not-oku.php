@@ -30,7 +30,7 @@
 
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-6 col-lg-5">
+        <div class="col-12 col-md-6 col-lg-5 animate__animated animate__slideInDown">
             <div class="card shadow-sm">
                 <div class="card-header p-3 mt-2">
                     <h2 class="text-center mb-3"><?php echo veriCoz($baslik); ?></h2>

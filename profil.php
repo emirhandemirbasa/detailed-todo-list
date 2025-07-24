@@ -105,7 +105,7 @@ if (isset($_POST["guncelle"]) && $_POST["guncelle"] == "Bilgileri Güncelle") {
 <div id="main-content">
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-8 col-lg-7">
+            <div class="col-12 col-md-8 col-lg-7 animate__animated animate__slideInDown">
                 <div class="card shadow rounded">
                     <div class="card-header bg-dark text-white fs-4 fw-semibold">Profil Düzenleme</div>
                     <div class="card-body bg-light">
