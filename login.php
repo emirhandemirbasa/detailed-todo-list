@@ -52,7 +52,7 @@ if (isset($_POST["girisYap"]) && $_POST["girisYap"] == "Giriş Yap") {
     }
 </style>
 
-<div class="d-flex justify-content-center align-items-center vh-100">
+<div class="d-flex justify-content-center align-items-center vh-100 animate__animated animate__fadeIn">
     <div class="card text-bg-dark shadow-lg" style="max-width: 400px; width: 100%;">
         <div class="card-header bg-primary text-center fs-4 fw-bold shadow-lg">
             GİRİŞ ARAYÜZÜ
